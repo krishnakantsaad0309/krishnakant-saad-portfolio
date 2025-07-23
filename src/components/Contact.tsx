@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const { toast } = useToast();
 
@@ -23,13 +23,15 @@ const Contact = () => {
       title: "Message Sent!",
       description: "Thank you for your message. I'll get back to you soon!",
     });
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -37,21 +39,21 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "john.doe@example.com",
-      href: "mailto:john.doe@example.com"
+      value: "krishnakant.saad03@gmail.com",
+      href: "mailto:krishnakant.saad03@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      href: "tel:+15551234567",
     },
     {
       icon: MapPin,
       label: "Location",
       value: "San Francisco, CA",
-      href: "#"
-    }
+      href: "#",
+    },
   ];
 
   return (
@@ -62,7 +64,8 @@ const Contact = () => {
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to work together? I'd love to hear about your project and discuss how I can help bring your ideas to life.
+            Ready to work together? I'd love to hear about your project and
+            discuss how I can help bring your ideas to life.
           </p>
         </div>
 
@@ -72,15 +75,18 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects, 
-                or just chatting about technology. Feel free to reach out through any 
-                of the channels below.
+                I'm always open to discussing new opportunities, interesting
+                projects, or just chatting about technology. Feel free to reach
+                out through any of the channels below.
               </p>
             </div>
 
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="card-gradient shadow-soft hover:shadow-hover transition-smooth">
+                <Card
+                  key={index}
+                  className="card-gradient shadow-soft hover:shadow-hover transition-smooth"
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
                       <div className="p-3 rounded-full bg-primary/10">
@@ -88,7 +94,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="font-medium">{info.label}</p>
-                        <a 
+                        <a
                           href={info.href}
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
@@ -108,7 +114,7 @@ const Contact = () => {
                   "Fast turnaround times and clear communication",
                   "Modern, scalable solutions built to last",
                   "Collaborative approach to every project",
-                  "Ongoing support and maintenance available"
+                  "Ongoing support and maintenance available",
                 ].map((benefit, index) => (
                   <li key={index} className="flex items-start">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></div>
@@ -122,7 +128,9 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="card-gradient shadow-soft">
             <CardHeader>
-              <CardTitle className="text-xl font-semibold">Send a Message</CardTitle>
+              <CardTitle className="text-xl font-semibold">
+                Send a Message
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -151,7 +159,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
                   <Input
@@ -163,7 +171,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
@@ -176,8 +184,11 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
-                <Button type="submit" className="w-full hero-gradient shadow-soft hover:shadow-hover transition-smooth">
+
+                <Button
+                  type="submit"
+                  className="w-full hero-gradient shadow-soft hover:shadow-hover transition-smooth"
+                >
                   <Send className="mr-2 h-4 w-4" />
                   Send Message
                 </Button>

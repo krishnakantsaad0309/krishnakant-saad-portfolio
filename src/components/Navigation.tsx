@@ -29,6 +29,7 @@ const Navigation = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <a href="#" className="text-xl font-bold text-gradient">
+            {/* <span className='p-2 rounded-full shadow-soft hover:shadow-hover transition-smooth hover:scale-110'>KK</span> */}
             Portfolio
           </a>
 
