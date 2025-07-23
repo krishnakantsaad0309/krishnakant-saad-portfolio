@@ -3,41 +3,49 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 88 },
-        { name: "Vue.js", level: 75 }
-      ]
-    },
-    {
-      title: "Backend Development",
-      skills: [
-        { name: "Node.js", level: 92 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 78 }
-      ]
-    },
-    {
-      title: "DevOps & Tools",
-      skills: [
-        { name: "AWS", level: 85 },
-        { name: "Docker", level: 82 },
-        { name: "Git", level: 95 },
-        { name: "CI/CD", level: 80 }
-      ]
-    }
-  ];
+ const skillCategories = [
+  {
+    title: "Frontend Development",
+    skills: [
+      { name: "React.js", level: 90 },
+      { name: "HTML/CSS", level: 90 },
+      { name: "JavaScript", level: 80 },
+      { name: "Tailwind CSS", level: 75 },
+      { name: "Bubble.io", level: 85 },
+      { name: "Basic Angular", level: 60 },
+    ],
+  },
+  {
+    title: "Backend Development",
+    skills: [
+      { name: "Ruby on Rails", level: 70 },
+      { name: "Node.js", level: 70 },
+      { name: "Make.com Integration", level: 70 },
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    skills: [
+      { name: "Git", level: 90 },
+      { name: "Figma", level: 70 },
+      { name: "WordPress", level: 65 },
+      { name: "CI/CD", level: 60 },
+    ],
+  }
+];
+
+
+  // const technologies = [
+  //   "React", "HTML", "CSS", "Basic Ruby on Rails", "JavaScript", "Basic EC2 AWS Service",
+  //   "PostgreSQL", "Basic MongoDB", "REST APIs", "Git", "Tailwind CSS",
+  //   "Basic Next.js", "Bubble.io", "Make.com", "Basic Figma"
+  // ];
 
   const technologies = [
-    "React", "TypeScript", "Node.js", "Python", "AWS", "Docker",
-    "PostgreSQL", "MongoDB", "GraphQL", "REST APIs", "Git", "Tailwind CSS",
-    "Next.js", "Vue.js", "Express.js", "Prisma", "Redis", "Kubernetes"
-  ];
+  "React.js", "JavaScript", "HTML", "CSS", "Tailwind CSS", "PostgreSQL" , "Git & Version Control", "Github" , "REST APIs", "Basic EC2 AWS Service", "Bubble.io",
+  "Ruby on Rails", "Make.com", "Figma", "Basic WordPress", "Basic Angular"
+];
+
 
   return (
     <section id="skills" className="py-20 section-gradient">

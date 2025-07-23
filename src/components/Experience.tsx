@@ -3,44 +3,165 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const Experience = () => {
+  // const experiences = [
+  //   {
+  //     company: "Zehntech Technology PVT LTD",
+  //     position: "Software Engineer",
+  //     location: "Indore, India",
+  //     period: "June 2022 – Present",
+  //     description:
+  //       "Worked in a dynamic software development team to build scalable and reliable web applications. Contributed to plugin and theme development for RedmineFlux, handled client communication, and participated in Agile ceremonies.",
+  //     technologies: ["ReactJS", "Ruby on Rails", "Bubble.io", "JavaScript", "Git", "CI/CD"],
+  //     achievements: [
+  //       "Developed multiple Redmine plugins enhancing task management and notification systems",
+  //       "Integrated Figma designs and improved UI/UX using Bubble.io responsive engine",
+  //       "Conducted thorough code reviews and improved CI/CD pipelines",
+  //       "Collaborated in a 10–15 member team delivering multiple high-quality client projects",
+  //       "Enhanced existing applications with clean, maintainable, and tested code"
+  //     ]
+  //   },
+  //   {
+  //     company: "Zehntech Technology PVT LTD",
+  //     position: "Intern Software Engineer",
+  //     location: "Indore, India",
+  //     period: "Nov 2021 – June 2022",
+  //     description:
+  //       "Assisted in integrating new features into existing projects, adhering to Agile workflows and ensuring cross-platform consistency.",
+  //     technologies: ["HTML", "CSS", "JavaScript", "Ruby on Rails", "Bubble.io"],
+  //     achievements: [
+  //       "Integrated features across multiple client projects",
+  //       "Collaborated with cross-functional teams in agile sprints",
+  //       "Learned and applied core frontend and backend practices under senior mentorship"
+  //     ]
+  //   },
+  //   {
+  //     company: "ReactJS Project – Compliancegate",
+  //     position: "Frontend Developer",
+  //     location: "Remote",
+  //     period: "2023",
+  //     description:
+  //       "Rebuilt and optimized the client site using Bubble.io with WordPress integration and AI-powered compliance tools.",
+  //     technologies: ["Bubble.io", "WordPress", "JavaScript", "Figma"],
+  //     achievements: [
+  //       "Built AI Q&A tools for compliance queries, certifications, and product generation",
+  //       "Ensured smooth integration of WordPress user data",
+  //       "Enhanced user experience by replicating existing pages responsively"
+  //     ]
+  //   },
+  //   {
+  //     company: "ReactJS Project – Wift (Automotive Startup)",
+  //     position: "Frontend Developer",
+  //     location: "Remote",
+  //     period: "2022",
+  //     description:
+  //       "Improved user experience for a Chile-based automotive leasing startup by revamping key pages using Bubble.io.",
+  //     technologies: ["Bubble.io", "JavaScript", "Figma"],
+  //     achievements: [
+  //       "Recreated homepage and integrated new pages using responsive engine",
+  //       "Improved site usability based on client feedback",
+  //       "Continuously updated frontend as per evolving product roadmap"
+  //     ]
+  //   },
+  //   {
+  //     company: "Angular Mini Project – Portfolio SPA",
+  //     position: "Frontend Developer (Personal)",
+  //     location: "Remote",
+  //     period: "2021",
+  //     description:
+  //       "Built a basic personal portfolio single-page application using Angular to demonstrate routing, data binding, and component architecture.",
+  //     technologies: ["Angular", "TypeScript", "SCSS"],
+  //     achievements: [
+  //       "Used Angular CLI to scaffold project and configure routes",
+  //       "Implemented reusable components and responsive layout",
+  //       "Deployed portfolio as a proof-of-concept project"
+  //     ]
+  //   }
+  // ];
+
   const experiences = [
     {
-      company: "TechCorp Solutions",
-      position: "Senior Full Stack Developer",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
-      description: "Lead development of scalable web applications serving 100K+ users. Architect cloud infrastructure and mentor junior developers.",
-      technologies: ["React", "Node.js", "AWS", "TypeScript", "PostgreSQL"],
+      company: "Zehntech Technology PVT LTD",
+      position: "Software Engineer",
+      location: "Indore, India",
+      period: "June 2022 – Present",
+      description:
+        "Worked with the development team to deliver scalable web applications, plugins, and themes for RedmineFlux. Managed client requirements and contributed across the full development lifecycle.",
+      technologies: ["ReactJS", "Ruby on Rails", "JavaScript", "Git", "CI/CD", "Bubble.io"],
       achievements: [
-        "Reduced application load time by 40% through optimization",
-        "Led team of 5 developers on major product redesign",
-        "Implemented CI/CD pipeline reducing deployment time by 60%"
+        "Developed Redmine plugins for task management and user notifications",
+        "Improved UI/UX using Bubble.io's responsive engine",
+        "Contributed to Redmine theme customization and plugin compatibility",
+        "Collaborated in a 6+ member agile team with daily scrum participation"
       ]
     },
     {
-      company: "Innovation Labs",
-      position: "Full Stack Developer",
-      location: "Austin, TX",
-      period: "2020 - 2022",
-      description: "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to implement pixel-perfect UIs.",
-      technologies: ["Vue.js", "Python", "Docker", "MongoDB", "GraphQL"],
+      company: "Zehntech Technology PVT LTD",
+      position: "Intern Software Engineer",
+      location: "Indore, India",
+      period: "Nov 2021 – June 2022",
+      description:
+        "Worked as an intern assisting on multiple projects, learning full-stack practices, and building features under guidance of senior developers.",
+      technologies: ["HTML", "CSS", "JavaScript", "Bubble.io"],
       achievements: [
-        "Built 8+ successful client projects from concept to deployment",
-        "Improved code quality by implementing automated testing",
-        "Reduced bug reports by 50% through better QA processes"
+        "Integrated new features into active projects with cross-team coordination",
+        "Practiced Agile methodology and collaborated in sprint cycles",
+        "Built foundational frontend skills and backend integration knowledge"
       ]
     },
     {
-      company: "StartupXYZ",
+      company: "Resume Portfolio",
+      position: "React Developer",
+      location: "Remote",
+      period: "2023",
+      description:
+        "Designed and developed a personal portfolio using React and Tailwind CSS to showcase professional background and technical projects.",
+      technologies: ["React.js", "Tailwind CSS", "Vite", "Lucide Icons"],
+      achievements: [
+        "Created fully responsive and animated personal portfolio",
+        "Integrated PDF resume download with preview functionality",
+        "Used modern UI practices and scroll animations without external libraries"
+      ]
+    },
+    {
+      company: "Eikshana - Garbage Detection System",
       position: "Frontend Developer",
       location: "Remote",
-      period: "2019 - 2020",
-      description: "Focused on creating responsive, user-friendly interfaces for a growing SaaS platform. Worked closely with UX designers and backend developers.",
-      technologies: ["React", "JavaScript", "SCSS", "REST APIs"],
+      period: "2023",
+      description:
+        "Built a React-based UI for a real-time garbage detection platform integrated with Flask backend and location APIs.",
+      technologies: ["React.js", "Axios", "Map API", "Flask", "JWT"],
       achievements: [
-        "Increased user engagement by 35% through UI improvements",
-        "Delivered features 25% faster using agile methodologies",
-        "Contributed to 200% user base growth during tenure"
+        "Built dashboard with ticket tracking, timeline, and status updates",
+        "Integrated map view, image upload, and authentication flows",
+        "Implemented secure APIs and modular UI structure"
+      ]
+    },
+    {
+      company: "Wift (Automotive Startup)",
+      position: "Bubble.io Developer",
+      location: "Remote",
+      period: "2022",
+      description:
+        "Enhanced homepage and core site pages using Bubble.io’s responsive engine for a car leasing startup based in Chile.",
+      technologies: ["Bubble.io", "JavaScript", "Figma"],
+      achievements: [
+        "Recreated landing page and multiple screens for responsiveness",
+        "Integrated new Figma-based designs seamlessly",
+        "Maintained visual consistency and client satisfaction"
+      ]
+    },
+    {
+      company: "Compliancegate",
+      position: "Bubble.io Developer",
+      location: "Remote",
+      period: "2023",
+      description:
+        "Revamped the client’s compliance service platform using Bubble.io and integrated WordPress with an AI-powered Q&A tool.",
+      technologies: ["Bubble.io", "WordPress", "JavaScript", "AI API"],
+      achievements: [
+        "Built an AI Q&A system to guide users through compliance processes",
+        "Integrated WordPress authentication with Bubble",
+        "Improved product list and certificate generation workflow"
       ]
     }
   ];
@@ -53,7 +174,7 @@ const Experience = () => {
             Work <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and the impact I've made at each organization
+            My professional journey and the impact I've made at organization
           </p>
         </div>
 
@@ -69,7 +190,7 @@ const Experience = () => {
                       <h3 className="text-lg font-semibold">{exp.company}</h3>
                     </div>
                     <h4 className="text-xl font-bold text-primary mb-3">{exp.position}</h4>
-                    
+
                     <div className="space-y-2 text-sm text-muted-foreground">
                       <div className="flex items-center">
                         <Calendar className="h-4 w-4 mr-2" />
@@ -99,7 +220,7 @@ const Experience = () => {
                     <p className="text-muted-foreground mb-6 leading-relaxed">
                       {exp.description}
                     </p>
-                    
+
                     <h5 className="font-semibold mb-3">Key Achievements:</h5>
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, achIndex) => (

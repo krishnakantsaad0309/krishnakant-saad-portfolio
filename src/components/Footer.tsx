@@ -13,7 +13,7 @@ const Footer = () => {
               Krishnakant Saad
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Full Stack Developer passionate about creating beautiful,
+              Frontend Developer passionate about creating beautiful,
               functional web applications with modern technologies.
             </p>
           </div>
@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Krishnakant Saad. All rights reserved.
+              © {currentYear} Krishnakant Saad.
             </p>
             <p className="text-muted-foreground text-sm flex items-center mt-2 md:mt-0">
               Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> using

@@ -42,14 +42,14 @@ const About = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              I'm a passionate full-stack developer with over 5 years of experience creating 
-              digital solutions that make a difference. My journey began with a Computer Science 
+              I'm a passionate frontend developer with over 2+ years of experience creating 
+              digital solutions that make a difference. My journey began with a Bachlor of Technology in Information Technology
               degree, but my real education came from building real-world applications and 
               solving complex problems.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I specialize in modern web technologies including React, Node.js, TypeScript, 
-              and cloud platforms. I believe in writing clean, maintainable code and creating 
+              I specialize in modern web technologies including React, HTML, CSS, JavaScript, Ruby On Rails, Bubble.io, Make.com, 
+              and Basic knowledge of EC2 service in AWS. I believe in writing clean, maintainable code and creating 
               user experiences that are both beautiful and functional.
             </p>
             <p className="text-muted-foreground leading-relaxed">

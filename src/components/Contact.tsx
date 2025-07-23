@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -18,12 +19,47 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    // Send message to you
+    emailjs
+      .send(
+        "service_j1ktu2r",
+        "template_xrj143g", // your main notification template
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "mACrTVy0ySRvfS1AC" // your public key
+      )
+      .then(() => {
+        // Send auto-reply to sender
+        return emailjs.send(
+          "service_j1ktu2r",
+          "template_7p1fpfh", // your auto-reply template
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+          },
+          "mACrTVy0ySRvfS1AC"
+        );
+      })
+      .then(() => {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I’ll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again later.",
+          variant: "destructive",
+        });
+      });
   };
 
   const handleChange = (
@@ -45,13 +81,13 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+917024937405",
+      href: "tel:+917024937405",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Indore, India",
       href: "#",
     },
   ];

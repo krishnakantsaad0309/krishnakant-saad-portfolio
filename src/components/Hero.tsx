@@ -25,13 +25,11 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-slide-up [animation-delay:0.2s]">
-            Full Stack Developer
+            Frontend Developer
           </p>
 
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up [animation-delay:0.4s]">
-            Passionate about creating beautiful, functional web applications
-            with modern technologies. Specialized in React, Node.js, and cloud
-            architecture.
+            Forward-thinking Software Engineer with a background working productively in dynamic environments. Fluent in React, Javascript, and Ruby on Rails programming languages used to develop software within the IT industry. Proud team player focused on achieving project objectives with speed and accuracy.
           </p>
 
           {/* Action Buttons */}
