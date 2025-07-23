@@ -20,13 +20,13 @@ const Hero = () => {
           </div>
 
           {/* Name and Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
+          <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
             <span className="text-gradient">Krishnakant Saad</span>
-          </h1>
+          </h3>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-slide-up [animation-delay:0.2s]">
+          <h4 className="text-xl md:text-2xl font-bold text-gray-700 text-muted-foreground mb-4 animate-slide-up [animation-delay:0.2s]">
             Frontend Developer
-          </p>
+          </h4>
 
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up [animation-delay:0.4s]">
             Forward-thinking Software Engineer with a background working productively in dynamic environments. Fluent in React, Javascript, and Ruby on Rails programming languages used to develop software within the IT industry. Proud team player focused on achieving project objectives with speed and accuracy.

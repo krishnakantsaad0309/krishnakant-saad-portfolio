@@ -5,7 +5,13 @@ import { Badge } from "@/components/ui/badge";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
-
+import Slider from "react-slick";
+import {
+  ReactElement,
+  JSXElementConstructor,
+  ReactNode,
+  ReactPortal,
+} from "react";
 const Projects = () => {
   // const projects = [
   //   {
@@ -119,6 +125,54 @@ const Projects = () => {
     },
   ];
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 1024, // lg
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 768, // md
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480, // sm
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+    appendDots: (
+      dots:
+        | string
+        | number
+        | boolean
+        | ReactElement<any, string | JSXElementConstructor<any>>
+        | Iterable<ReactNode>
+        | ReactPortal
+    ) => (
+      <div>
+        <ul className="flex justify-center mt-6 space-x-2">{dots}</ul>
+      </div>
+    ),
+    customPaging: (_i: any) => (
+      <div className="w-3 h-3 rounded-full bg-muted hover:bg-primary transition-colors"></div>
+    ),
+  };
+
   return (
     <section id="projects" className="py-20 section-gradient">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,84 +186,111 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-12">
+        <Slider
+          {...sliderSettings}
+          className="
+    
+    [&_.slick-prev:before]:text-[28px] [&_.slick-prev:before]:text-gradient [&_.slick-prev:before]:opacity-100
+    [&_.slick-next:before]:text-[28px] [&_.slick-next:before]:text-gradient [&_.slick-next:before]:opacity-100
+  "
+        >
           {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="card-gradient shadow-soft hover:shadow-hover transition-smooth overflow-hidden"
-            >
-              <div className="grid lg:grid-cols-2 gap-0">
-                {/* Project Image */}
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 lg:h-full object-cover transition-smooth group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity"></div>
-                </div>
+            <div key={index} className="px-2">
+              <Card className="card-gradient shadow-soft hover:shadow-hover transition-smooth overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-64 lg:h-full object-cover transition-smooth group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity"></div>
+                  </div>
 
-                {/* Project Details */}
-                <div className="p-8">
-                  <CardHeader className="p-0 mb-6">
-                    <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {project.description}
-                    </p>
-                  </CardHeader>
+                  <div className="p-8">
+                    <CardHeader className="p-0 mb-6">
+                      <h3 className="text-2xl font-bold mb-3">
+                        {project.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
+                    </CardHeader>
 
-                  <CardContent className="p-0 space-y-6">
-                    {/* Technologies */}
-                    <div>
-                      <h4 className="font-semibold mb-3">Technologies Used:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, techIndex) => (
-                          <Badge
-                            key={techIndex}
-                            variant="secondary"
-                            className="text-xs"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
+                    <CardContent className="p-0 space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-3">
+                          Technologies Used:
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech, techIndex) => (
+                            <Badge
+                              key={techIndex}
+                              variant="secondary"
+                              className="text-xs"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Features */}
-                    <div>
-                      <h4 className="font-semibold mb-3">Key Features:</h4>
-                      <ul className="space-y-1">
-                        {project.features.map((feature, featureIndex) => (
-                          <li
-                            key={featureIndex}
-                            className="flex items-start text-sm"
+                      <div>
+                        <h4 className="font-semibold mb-3">Key Features:</h4>
+                        <ul className="space-y-1">
+                          {project.features.map((feature, featureIndex) => (
+                            <li
+                              key={featureIndex}
+                              className="flex items-start text-sm"
+                            >
+                              <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></div>
+                              <span className="text-muted-foreground">
+                                {feature}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex gap-4 pt-4">
+                        <Button
+                          asChild
+                          variant="default"
+                          size="sm"
+                          className="flex-1"
+                        >
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></div>
-                            <span className="text-muted-foreground">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex gap-4 pt-4">
-                      <Button variant="default" size="sm" className="flex-1">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </Button>
-                      <Button variant="outline" size="sm" className="flex-1">
-                        <Github className="mr-2 h-4 w-4" />
-                        View Code
-                      </Button>
-                    </div>
-                  </CardContent>
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Live Demo
+                          </a>
+                        </Button>
+                        <Button
+                          asChild
+                          variant="outline"
+                          size="sm"
+                          className="flex-1"
+                        >
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="mr-2 h-4 w-4" />
+                            View Code
+                          </a>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </section>
   );

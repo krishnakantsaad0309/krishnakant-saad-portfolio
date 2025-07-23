@@ -1,6 +1,13 @@
-import { Calendar, MapPin, Building } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Calendar, MapPin, Building } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import Slider from "react-slick";
+import {
+  ReactElement,
+  JSXElementConstructor,
+  ReactNode,
+  ReactPortal,
+} from "react";
 
 const Experience = () => {
   // const experiences = [
@@ -86,13 +93,20 @@ const Experience = () => {
       period: "June 2022 – Present",
       description:
         "Worked with the development team to deliver scalable web applications, plugins, and themes for RedmineFlux. Managed client requirements and contributed across the full development lifecycle.",
-      technologies: ["ReactJS", "Ruby on Rails", "JavaScript", "Git", "CI/CD", "Bubble.io"],
+      technologies: [
+        "ReactJS",
+        "Ruby on Rails",
+        "JavaScript",
+        "Git",
+        "CI/CD",
+        "Bubble.io",
+      ],
       achievements: [
         "Developed Redmine plugins for task management and user notifications",
         "Improved UI/UX using Bubble.io's responsive engine",
         "Contributed to Redmine theme customization and plugin compatibility",
-        "Collaborated in a 6+ member agile team with daily scrum participation"
-      ]
+        "Collaborated in a 6+ member agile team with daily scrum participation",
+      ],
     },
     {
       company: "Zehntech Technology PVT LTD",
@@ -105,8 +119,8 @@ const Experience = () => {
       achievements: [
         "Integrated new features into active projects with cross-team coordination",
         "Practiced Agile methodology and collaborated in sprint cycles",
-        "Built foundational frontend skills and backend integration knowledge"
-      ]
+        "Built foundational frontend skills and backend integration knowledge",
+      ],
     },
     {
       company: "Resume Portfolio",
@@ -119,8 +133,8 @@ const Experience = () => {
       achievements: [
         "Created fully responsive and animated personal portfolio",
         "Integrated PDF resume download with preview functionality",
-        "Used modern UI practices and scroll animations without external libraries"
-      ]
+        "Used modern UI practices and scroll animations without external libraries",
+      ],
     },
     {
       company: "Eikshana - Garbage Detection System",
@@ -133,8 +147,8 @@ const Experience = () => {
       achievements: [
         "Built dashboard with ticket tracking, timeline, and status updates",
         "Integrated map view, image upload, and authentication flows",
-        "Implemented secure APIs and modular UI structure"
-      ]
+        "Implemented secure APIs and modular UI structure",
+      ],
     },
     {
       company: "Wift (Automotive Startup)",
@@ -147,8 +161,8 @@ const Experience = () => {
       achievements: [
         "Recreated landing page and multiple screens for responsiveness",
         "Integrated new Figma-based designs seamlessly",
-        "Maintained visual consistency and client satisfaction"
-      ]
+        "Maintained visual consistency and client satisfaction",
+      ],
     },
     {
       company: "Compliancegate",
@@ -161,81 +175,146 @@ const Experience = () => {
       achievements: [
         "Built an AI Q&A system to guide users through compliance processes",
         "Integrated WordPress authentication with Bubble",
-        "Improved product list and certificate generation workflow"
-      ]
-    }
+        "Improved product list and certificate generation workflow",
+      ],
+    },
   ];
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 1024, // lg
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 768, // md
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480, // sm
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+    appendDots: (
+      dots:
+        | string
+        | number
+        | boolean
+        | ReactElement<any, string | JSXElementConstructor<any>>
+        | Iterable<ReactNode>
+        | ReactPortal
+    ) => (
+      <div>
+        <ul className="flex justify-center mt-6 space-x-2">{dots}</ul>
+      </div>
+    ),
+    customPaging: (_i: any) => (
+      <div className="w-3 h-3 rounded-full bg-muted hover:bg-primary transition-colors"></div>
+    ),
+  };
 
   return (
     <section id="experience" className="py-20 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto pt-2 pb-2 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Work <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and the impact I've made at organization
+            My professional journey and the impact I've made at each
+            organization
           </p>
         </div>
 
-        <div className="space-y-8">
+        <Slider
+          {...sliderSettings}
+          className="[&_.slick-prev:before]:text-[28px] [&_.slick-prev:before]:text-gradient [&_.slick-prev:before]:opacity-100
+    [&_.slick-next:before]:text-[28px] [&_.slick-next:before]:text-gradient [&_.slick-next:before]:opacity-100
+  "
+        >
           {experiences.map((exp, index) => (
-            <Card key={index} className="card-gradient shadow-soft hover:shadow-hover transition-smooth">
-              <CardContent className="p-8">
-                <div className="grid lg:grid-cols-3 gap-6">
-                  {/* Company & Position */}
-                  <div className="lg:col-span-1">
-                    <div className="flex items-center mb-2">
-                      <Building className="h-5 w-5 text-primary mr-2" />
-                      <h3 className="text-lg font-semibold">{exp.company}</h3>
-                    </div>
-                    <h4 className="text-xl font-bold text-primary mb-3">{exp.position}</h4>
-
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        {exp.period}
+            <div key={index} className="px-2">
+              <Card className="card-gradient shadow-soft hover:shadow-hover transition-smooth">
+                <CardContent className="p-8">
+                  <div className="grid lg:grid-cols-3 gap-6">
+                    {/* Company & Position */}
+                    <div className="lg:col-span-1">
+                      <div className="flex items-center mb-2">
+                        <Building className="h-5 w-5 text-primary mr-2" />
+                        <h3 className="text-lg font-semibold">{exp.company}</h3>
                       </div>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-2" />
-                        {exp.location}
+                      <h4 className="text-xl font-bold text-primary mb-3">
+                        {exp.position}
+                      </h4>
+
+                      <div className="space-y-2 text-sm text-muted-foreground">
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-2" />
+                          {exp.period}
+                        </div>
+                        <div className="flex items-center">
+                          <MapPin className="h-4 w-4 mr-2" />
+                          {exp.location}
+                        </div>
+                      </div>
+
+                      <div className="mt-4">
+                        <p className="text-sm font-medium mb-2">
+                          Technologies:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.technologies.map((tech, techIndex) => (
+                            <Badge
+                              key={techIndex}
+                              variant="outline"
+                              className="text-xs"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    {/* Technologies */}
-                    <div className="mt-4">
-                      <p className="text-sm font-medium mb-2">Technologies:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="outline" className="text-xs">
-                            {tech}
-                          </Badge>
+                    {/* Description & Achievements */}
+                    <div className="lg:col-span-2">
+                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                        {exp.description}
+                      </p>
+
+                      <h5 className="font-semibold mb-3">Key Achievements:</h5>
+                      <ul className="space-y-2">
+                        {exp.achievements.map((achievement, achIndex) => (
+                          <li key={achIndex} className="flex items-start">
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></div>
+                            <span className="text-muted-foreground">
+                              {achievement}
+                            </span>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
                   </div>
-
-                  {/* Description & Achievements */}
-                  <div className="lg:col-span-2">
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {exp.description}
-                    </p>
-
-                    <h5 className="font-semibold mb-3">Key Achievements:</h5>
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-muted-foreground">{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </section>
   );

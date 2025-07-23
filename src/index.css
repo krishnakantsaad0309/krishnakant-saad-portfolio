@@ -178,3 +178,19 @@ All colors MUST be HSL.
     background-clip: text;
   }
 }
+
+
+
+.slick-prev:before,
+.slick-next:before {
+  color: #6366f1;
+  font-size: 24px;
+}
+
+
+.slick-prev,
+.slick-next {
+  width: 48px;
+  height: 48px;
+  z-index: 10;
+}
