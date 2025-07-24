@@ -10,81 +10,7 @@ import {
 } from "react";
 
 const Experience = () => {
-  // const experiences = [
-  //   {
-  //     company: "Zehntech Technology PVT LTD",
-  //     position: "Software Engineer",
-  //     location: "Indore, India",
-  //     period: "June 2022 – Present",
-  //     description:
-  //       "Worked in a dynamic software development team to build scalable and reliable web applications. Contributed to plugin and theme development for RedmineFlux, handled client communication, and participated in Agile ceremonies.",
-  //     technologies: ["ReactJS", "Ruby on Rails", "Bubble.io", "JavaScript", "Git", "CI/CD"],
-  //     achievements: [
-  //       "Developed multiple Redmine plugins enhancing task management and notification systems",
-  //       "Integrated Figma designs and improved UI/UX using Bubble.io responsive engine",
-  //       "Conducted thorough code reviews and improved CI/CD pipelines",
-  //       "Collaborated in a 10–15 member team delivering multiple high-quality client projects",
-  //       "Enhanced existing applications with clean, maintainable, and tested code"
-  //     ]
-  //   },
-  //   {
-  //     company: "Zehntech Technology PVT LTD",
-  //     position: "Intern Software Engineer",
-  //     location: "Indore, India",
-  //     period: "Nov 2021 – June 2022",
-  //     description:
-  //       "Assisted in integrating new features into existing projects, adhering to Agile workflows and ensuring cross-platform consistency.",
-  //     technologies: ["HTML", "CSS", "JavaScript", "Ruby on Rails", "Bubble.io"],
-  //     achievements: [
-  //       "Integrated features across multiple client projects",
-  //       "Collaborated with cross-functional teams in agile sprints",
-  //       "Learned and applied core frontend and backend practices under senior mentorship"
-  //     ]
-  //   },
-  //   {
-  //     company: "ReactJS Project – Compliancegate",
-  //     position: "Frontend Developer",
-  //     location: "Remote",
-  //     period: "2023",
-  //     description:
-  //       "Rebuilt and optimized the client site using Bubble.io with WordPress integration and AI-powered compliance tools.",
-  //     technologies: ["Bubble.io", "WordPress", "JavaScript", "Figma"],
-  //     achievements: [
-  //       "Built AI Q&A tools for compliance queries, certifications, and product generation",
-  //       "Ensured smooth integration of WordPress user data",
-  //       "Enhanced user experience by replicating existing pages responsively"
-  //     ]
-  //   },
-  //   {
-  //     company: "ReactJS Project – Wift (Automotive Startup)",
-  //     position: "Frontend Developer",
-  //     location: "Remote",
-  //     period: "2022",
-  //     description:
-  //       "Improved user experience for a Chile-based automotive leasing startup by revamping key pages using Bubble.io.",
-  //     technologies: ["Bubble.io", "JavaScript", "Figma"],
-  //     achievements: [
-  //       "Recreated homepage and integrated new pages using responsive engine",
-  //       "Improved site usability based on client feedback",
-  //       "Continuously updated frontend as per evolving product roadmap"
-  //     ]
-  //   },
-  //   {
-  //     company: "Angular Mini Project – Portfolio SPA",
-  //     position: "Frontend Developer (Personal)",
-  //     location: "Remote",
-  //     period: "2021",
-  //     description:
-  //       "Built a basic personal portfolio single-page application using Angular to demonstrate routing, data binding, and component architecture.",
-  //     technologies: ["Angular", "TypeScript", "SCSS"],
-  //     achievements: [
-  //       "Used Angular CLI to scaffold project and configure routes",
-  //       "Implemented reusable components and responsive layout",
-  //       "Deployed portfolio as a proof-of-concept project"
-  //     ]
-  //   }
-  // ];
-
+ 
   const experiences = [
     {
       company: "Zehntech Technology PVT LTD",
@@ -180,56 +106,71 @@ const Experience = () => {
     },
   ];
 
+  // const sliderSettings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 600,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: true,
+  //   autoplay: true,
+  //   autoplaySpeed: 2000,
+  //   adaptiveHeight: true,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024, // lg
+  //       settings: {
+  //         slidesToShow: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 768, // md
+  //       settings: {
+  //         slidesToShow: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480, // sm
+  //       settings: {
+  //         slidesToShow: 1,
+  //       },
+  //     },
+  //   ],
+  //   appendDots: (
+  //     dots:
+  //       | string
+  //       | number
+  //       | boolean
+  //       | ReactElement<any, string | JSXElementConstructor<any>>
+  //       | Iterable<ReactNode>
+  //       | ReactPortal
+  //   ) => (
+  //     <div>
+  //       <ul className="flex justify-center mt-6 space-x-2">{dots}</ul>
+  //     </div>
+  //   ),
+  //   customPaging: (_i: any) => (
+  //     <div className="w-3 h-3 rounded-full bg-muted hover:bg-primary transition-colors"></div>
+  //   ),
+  // };
+
   const sliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 600,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
+    rtl: false,
+    pauseOnHover: false,
+    cssEase: "linear",
     adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 1024, // lg
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 768, // md
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 480, // sm
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-    appendDots: (
-      dots:
-        | string
-        | number
-        | boolean
-        | ReactElement<any, string | JSXElementConstructor<any>>
-        | Iterable<ReactNode>
-        | ReactPortal
-    ) => (
-      <div>
-        <ul className="flex justify-center mt-6 space-x-2">{dots}</ul>
-      </div>
-    ),
-    customPaging: (_i: any) => (
-      <div className="w-3 h-3 rounded-full bg-muted hover:bg-primary transition-colors"></div>
-    ),
   };
 
   return (
-    <section id="experience" className="py-20 bg-background">
+    <section id="experience" className="w-full min-h-screen py-24 bg-background">
       <div className="max-w-4xl mx-auto pt-2 pb-2 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -241,17 +182,12 @@ const Experience = () => {
           </p>
         </div>
 
-        <Slider
-          {...sliderSettings}
-          className="[&_.slick-prev:before]:text-[28px] [&_.slick-prev:before]:text-gradient [&_.slick-prev:before]:opacity-100
-    [&_.slick-next:before]:text-[28px] [&_.slick-next:before]:text-gradient [&_.slick-next:before]:opacity-100
-  "
-        >
+        <Slider {...sliderSettings} className="w-full !overflow-visible">
           {experiences.map((exp, index) => (
-            <div key={index} className="px-2">
-              <Card className="card-gradient shadow-soft hover:shadow-hover transition-smooth">
+            <div key={index} className="w-full flex justify-center px-4 py-6">
+              <Card className="max-w-5xl w-full card-gradient shadow-soft hover:shadow-hover transition-smooth">
                 <CardContent className="p-8">
-                  <div className="grid lg:grid-cols-3 gap-6">
+                  <div className="grid  gap-6">
                     {/* Company & Position */}
                     <div className="lg:col-span-1">
                       <div className="flex items-center mb-2">

@@ -1,65 +1,13 @@
-import { ExternalLink, Github } from "lucide-react";
-import { Button } from "@/components/ui/button";
+// import { ExternalLink, Github } from "lucide-react";
+// import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import Slider from "react-slick";
-import {
-  ReactElement,
-  JSXElementConstructor,
-  ReactNode,
-  ReactPortal,
-} from "react";
+// import { ReactNode, ReactPortal,} from "react";
 const Projects = () => {
-  // const projects = [
-  //   {
-  //     title: "E-Commerce Platform",
-  //     description: "A full-featured e-commerce platform with user authentication, payment processing, inventory management, and admin dashboard. Built with modern technologies for scalability.",
-  //     image: project1,
-  //     technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-  //     features: [
-  //       "User authentication & authorization",
-  //       "Payment processing with Stripe",
-  //       "Real-time inventory management",
-  //       "Admin dashboard with analytics",
-  //       "Responsive design"
-  //     ],
-  //     githubUrl: "https://github.com",
-  //     liveUrl: "https://demo.com"
-  //   },
-  //   {
-  //     title: "Task Management App",
-  //     description: "A collaborative task management application with real-time updates, team collaboration features, and intuitive project management tools for remote teams.",
-  //     image: project2,
-  //     technologies: ["Vue.js", "Python", "MongoDB", "Socket.io", "Docker"],
-  //     features: [
-  //       "Real-time collaboration",
-  //       "Drag & drop task boards",
-  //       "Team management",
-  //       "File attachments",
-  //       "Mobile responsive"
-  //     ],
-  //     githubUrl: "https://github.com",
-  //     liveUrl: "https://demo.com"
-  //   },
-  //   {
-  //     title: "Analytics Dashboard",
-  //     description: "A comprehensive analytics dashboard providing real-time insights with interactive charts, data visualization, and customizable reporting features for business intelligence.",
-  //     image: project3,
-  //     technologies: ["React", "D3.js", "Python", "FastAPI", "Redis"],
-  //     features: [
-  //       "Interactive data visualization",
-  //       "Real-time updates",
-  //       "Custom report generation",
-  //       "Data export capabilities",
-  //       "Multi-tenant architecture"
-  //     ],
-  //     githubUrl: "https://github.com",
-  //     liveUrl: "https://demo.com"
-  //   }
-  // ];
 
   const projects = [
     {
@@ -125,56 +73,71 @@ const Projects = () => {
     },
   ];
 
-  const sliderSettings = {
-    dots: true,
+  // const sliderSettings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 600,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: true,
+  //   autoplay: true,
+  //   autoplaySpeed: 2000,
+  //   adaptiveHeight: true,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024, // lg
+  //       settings: {
+  //         slidesToShow: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 768, // md
+  //       settings: {
+  //         slidesToShow: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480, // sm
+  //       settings: {
+  //         slidesToShow: 1,
+  //       },
+  //     },
+  //   ],
+  //   appendDots: (
+  //     dots:
+  //       | string
+  //       | number
+  //       | boolean
+  //       | ReactElement<any, string | JSXElementConstructor<any>>
+  //       | Iterable<ReactNode>
+  //       | ReactPortal
+  //   ) => (
+  //     <div>
+  //       <ul className="flex justify-center mt-6 space-x-2">{dots}</ul>
+  //     </div>
+  //   ),
+  //   customPaging: (_i: any) => (
+  //     <div className="w-3 h-3 rounded-full bg-muted hover:bg-primary transition-colors"></div>
+  //   ),
+  // };
+
+    const sliderSettings = {
+    dots: false,
     infinite: true,
-    speed: 600,
+    speed: 2000, // animation transition duration
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false, // no arrows needed
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000, // delay before sliding to next
+    rtl: false, // Right to left
+    pauseOnHover: false,
+    cssEase: "linear", // smooth continuous scroll
     adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 1024, // lg
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 768, // md
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 480, // sm
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-    appendDots: (
-      dots:
-        | string
-        | number
-        | boolean
-        | ReactElement<any, string | JSXElementConstructor<any>>
-        | Iterable<ReactNode>
-        | ReactPortal
-    ) => (
-      <div>
-        <ul className="flex justify-center mt-6 space-x-2">{dots}</ul>
-      </div>
-    ),
-    customPaging: (_i: any) => (
-      <div className="w-3 h-3 rounded-full bg-muted hover:bg-primary transition-colors"></div>
-    ),
   };
 
   return (
-    <section id="projects" className="py-20 section-gradient">
+    <section id="projects" className="min-h-screen pt-28 pb-4 section-gradient">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -188,14 +151,10 @@ const Projects = () => {
 
         <Slider
           {...sliderSettings}
-          className="
-    
-    [&_.slick-prev:before]:text-[28px] [&_.slick-prev:before]:text-gradient [&_.slick-prev:before]:opacity-100
-    [&_.slick-next:before]:text-[28px] [&_.slick-next:before]:text-gradient [&_.slick-next:before]:opacity-100
-  "
+          className="!overflow-visible [&_.slick-prev:before]:text-[28px] ..."
         >
           {projects.map((project, index) => (
-            <div key={index} className="px-2">
+            <div key={index} className="px-2 py-6 flex justify-center">
               <Card className="card-gradient shadow-soft hover:shadow-hover transition-smooth overflow-hidden">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative overflow-hidden">
@@ -251,7 +210,7 @@ const Projects = () => {
                           ))}
                         </ul>
                       </div>
-
+                      {/* 
                       <div className="flex gap-4 pt-4">
                         <Button
                           asChild
@@ -283,7 +242,7 @@ const Projects = () => {
                             View Code
                           </a>
                         </Button>
-                      </div>
+                      </div> */}
                     </CardContent>
                   </div>
                 </div>
