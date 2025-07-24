@@ -7,6 +7,24 @@ import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
+
+import { useEffect } from "react";
+
+const scrollToHash = () => {
+  const hash = window.location.hash;
+  if (hash) {
+    const el = document.querySelector(hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+};
+
+useEffect(() => {
+  scrollToHash();
+}, []);
+
+
 const Index = () => {
   return (
     <div className="min-h-screen">
