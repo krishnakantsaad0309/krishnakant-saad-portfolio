@@ -43,7 +43,7 @@ const Hero = () => {
             </Button> */}
 
             <a
-              href="/Krishnakant_Resume.pdf"
+              href="/krishnakant-saad-portfolio/Krishnakant_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download
