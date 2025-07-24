@@ -6,11 +6,14 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-
-
 import { useEffect } from "react";
 
-const scrollToHash = () => {
+
+
+
+const Index = () => {
+
+  const scrollToHash = () => {
   const hash = window.location.hash;
   if (hash) {
     const el = document.querySelector(hash);
@@ -24,8 +27,6 @@ useEffect(() => {
   scrollToHash();
 }, []);
 
-
-const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
