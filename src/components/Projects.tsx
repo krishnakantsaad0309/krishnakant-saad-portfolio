@@ -6,6 +6,8 @@ import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import Slider from "react-slick";
+import todoApp from "@/assets/todo-app.jpg";
+
 // import { ReactNode, ReactPortal,} from "react";
 const Projects = () => {
 
@@ -41,6 +43,21 @@ const Projects = () => {
         "https://github.com/krishnakant-saad/eikshana-garbage-detection",
       liveUrl: "https://eikshana.vercel.app",
     },
+    {
+      title: "Todo List App",
+      description: "A clean and simple Todo List web app built with React and Tailwind CSS, featuring add, update, delete, and completion tracking.",
+      image: todoApp,
+      technologies: ["React.js", "Tailwind CSS", "LocalStorage"],
+      features: [
+        "Add, edit, and delete tasks",
+        "Mark tasks as completed",
+        "Filter tasks by status",
+        "Data persistence using local storage"
+      ],
+      githubUrl: "https://github.com/krishnakantsaad0309/react-todo-app",
+      liveUrl: "https://krishnakantsaad0309.github.io/react-todo-app",
+    },
+
     {
       title: "Wift – Automotive Leasing Startup (Bubble.io)",
       description:
